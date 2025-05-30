@@ -1,0 +1,405 @@
+/* Arquivo CSS adicional para responsividade */
+
+/* Regras gerais e media queries serão adicionadas aqui */
+
+
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Grandes (Ex: Desktops menores) - Ajustes iniciais */
+@media (max-width: 1300px) {
+    .foto {
+        margin-left: 850px; /* Ajuste inicial para foto não sobrepor texto */
+    }
+    .tudinho {
+        margin-left: 650px; /* Ajuste inicial para seção de contato */
+    }
+}
+
+/* Telas Maiores (Ex: Laptops, Tablets grandes em paisagem) */
+@media (max-width: 1200px) {
+    .titulo {
+        margin-left: 5%;
+        width: 90%;
+        max-width: 650px; /* Limitar largura do SVG */
+    }
+
+    p {
+        width: 90%;
+        max-width: 550px; /* Limitar largura do parágrafo */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .home .texto {
+        text-align: center; /* Centralizar conteúdo do texto */
+    }
+
+    .foto {
+        display: block;
+        margin: 30px auto 0 auto; /* Centralizar e ajustar margem */
+        float: none;
+        width: 80%;
+        max-width: 450px;
+        position: relative; /* Resetar posicionamento se necessário */
+        margin-top: 30px !important; /* Sobrescrever inline style */
+        margin-left: auto !important; /* Sobrescrever inline style */
+    }
+
+    .social {
+        width: 50%; /* Ajustar largura da barra social */
+        margin: 30px auto 0 auto; /* Centralizar */
+        padding: 15px 20px;
+        z-index: 1; /* Garantir que fique acima de outros elementos se necessário */
+    }
+
+    .titulo_sobre {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 80%;
+        max-width: 400px;
+        margin-top: 100px;
+    }
+
+    .texos_sobre {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        max-width: 700px;
+        margin-top: 30px; /* Ajustar espaçamento */
+        text-align: center;
+    }
+
+    .texos_sobre p {
+        width: 100%; /* Garantir que o parágrafo ocupe o espaço */
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .icons {
+        display: block;
+        margin: 30px auto 0 auto;
+        width: 80%;
+        max-width: 500px;
+        margin-top: 30px; /* Ajustar espaçamento */
+    }
+
+    .sombra {
+        display: none; /* Esconder sombra se causar problemas de layout */
+    }
+
+    .habilidades {
+        display: block;
+        margin: 60px auto 0 auto;
+        width: 80%;
+        max-width: 400px;
+    }
+
+    #habilidades .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
+
+    .titulo_projetos {
+        display: block;
+        margin: 80px auto 40px auto;
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .contato_titulo {
+        display: block;
+        margin: 100px auto 40px auto;
+        width: 80%;
+        max-width: 400px;
+    }
+
+    #contato form {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .tudinho {
+        margin: 40px auto 0 auto;
+        width: 90%;
+        max-width: 900px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Empilhar colunas do contato */
+    }
+
+    .contact-info {
+        order: -1; /* Mover informações de contato para cima */
+        margin-bottom: 2rem;
+    }
+}
+
+/* Telas Médias (Ex: Tablets em retrato) */
+@media (max-width: 992px) {
+    .foto {
+        max-width: 350px;
+    }
+
+    .social {
+        width: 70%;
+    }
+
+    .social-bar {
+        justify-content: center;
+    }
+
+    .titulo_sobre,
+    .habilidades,
+    .titulo_projetos,
+    .contato_titulo {
+        max-width: 350px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .projects-track {
+        gap: 20px;
+    }
+
+    .project-card {
+        flex: 0 0 260px;
+    }
+
+    .tudinho {
+        max-width: 700px;
+    }
+}
+
+/* Telas Pequenas (Ex: Celulares grandes, Tablets pequenos) */
+@media (max-width: 768px) {
+    nav {
+        position: relative; /* Mudar para relativo */
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .navegacao ul {
+        flex-direction: column; /* Empilhar links */
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        background-color: rgba(82, 10, 38, 0.6); /* Aumentar opacidade talvez */
+    }
+
+    .home {
+        margin-top: 20px;
+    }
+
+    .titulo {
+        max-width: 90%;
+        height: auto; /* Permitir ajuste de altura */
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .foto {
+        max-width: 280px;
+    }
+
+    .social {
+        width: 85%;
+    }
+
+    .social-bar {
+        flex-wrap: wrap; /* Permitir quebra de linha */
+        gap: 5px;
+    }
+
+    .social-btn {
+        width: 45px; /* Reduzir tamanho inicial */
+        padding: 8px;
+    }
+    .social-btn .icon img {
+        width: 20px; /* Ajustar tamanho do ícone */
+        height: 20px;
+    }
+    .social-btn:hover {
+        width: 45px; /* Desativar expansão no hover */
+        background-color: #8d0249;
+    }
+    .social-btn .text {
+        display: none; /* Esconder texto */
+    }
+
+    .titulo_sobre,
+    .habilidades,
+    .titulo_projetos,
+    .contato_titulo {
+        max-width: 300px;
+        margin-top: 60px;
+    }
+
+    .texos_sobre {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .icons {
+        max-width: 90%;
+    }
+
+    /* A grid de skills já tem media query para 768px no CSS original */
+
+    .projects-track {
+        animation: none; /* Desativar animação */
+        flex-direction: column; /* Empilhar projetos */
+        align-items: center;
+        gap: 25px;
+    }
+
+    .project-card {
+        flex: 0 0 auto;
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .projects-container:hover .projects-track {
+        animation-play-state: running; /* Não necessário se animação está desativada */
+    }
+
+    .tudinho {
+        width: 95%;
+        margin-top: 30px;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 1.5rem;
+        width: 100%; /* Ocupar toda a largura disponível */
+    }
+
+    .contact-info-item {
+        flex-direction: column; /* Empilhar ícone e texto */
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-info-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    #contato form {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .limpar, .enviar {
+        width: 100%;
+    }
+
+    /* Esconder animação de ícones flutuantes */
+    .vscode {
+        display: none;
+    }
+}
+
+/* Telas Muito Pequenas (Ex: Celulares menores) */
+@media (max-width: 480px) {
+    p {
+        font-size: 14px;
+    }
+
+    .foto {
+        max-width: 220px;
+    }
+
+    .social {
+        width: 95%;
+    }
+
+    .titulo_sobre,
+    .habilidades,
+    .titulo_projetos,
+    .contato_titulo {
+        max-width: 250px;
+        margin-top: 40px;
+    }
+
+    .skills-grid {
+        /* Grid já vira 1 coluna no CSS original */
+        padding: 0 10px;
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+
+    .skill-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-card {
+        width: 95%;
+    }
+
+    .project-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-info p {
+        font-size: 0.85rem;
+    }
+
+    .github-link {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 1rem;
+    }
+
+    .contact-info-title {
+        font-size: 1.3rem;
+    }
+
+    .form-control {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    textarea.form-control {
+        min-height: 120px;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
