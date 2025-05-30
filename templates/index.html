@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfolio</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles/responsive.css">
+
+    <style>
+        .tudinho{
+            margin-left: 800px;
+            margin-top: -450px;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            flex: 1;
+            
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+            
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            color: white;
+            width: 450px;
+            border-radius: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            background-color: rgba(255, 255, 255, 0.07);
+            color: var(--light);
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+            
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--light);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--light);
+            box-shadow: 0 4px 10px rgba(232, 62, 140, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: #d6307c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(232, 62, 140, 0.4);
+        }
+        
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-info-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .contact-info-title::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            
+        }
+        
+        .contact-info-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(232, 62, 140, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-info-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            
+        }
+        
+        .contact-info-content p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-left: -5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .success-message {
+            display: none;
+            background-color: rgba(40, 167, 69, 0.1);
+            border: 1px solid rgba(40, 167, 69, 0.2);
+            color: var(--success);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .navbar a {
+                margin: 0.5rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+
+    .social{
+        background-color: rgba(255, 114, 180, 0.251);
+        padding: 20px 30px;
+        width: 25%;
+        border-radius: 50px;
+        margin-left: 120px;
+        margin-top: -90px;
+        
+        margin-left: -70px;
+
+        z-index: -1;
+        inset: 0;
+    }
+
+    .social-bar {
+      display: flex;
+      margin-left: 60px;
+      gap: 10px;
+    }
+
+    .social-btn {
+      background-color: transparent;
+      border: 1px solid white;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      width: 55px;
+    }
+
+    .social-btn .icon {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-btn .text {
+      white-space: nowrap;
+      margin-left: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-btn:hover {
+      width: 140px;
+      background-color: #8d0249;
+    }
+
+    .social-btn:hover .text {
+      opacity: 1;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+    </style>
+</head>
+
+<body>  
+
+    <div class="vscode">
+        <span class="icone" style="--i: 3; --x: 10;"></span>
+        <span class="icone" style="--i: 29; --x: 30;"></span>
+        <span class="icone" style="--i: 7; --x: 50;"></span>
+        <span class="icone" style="--i: 22; --x: 70;"></span>
+        <span class="icone" style="--i: 41; --x: 90;"></span>
+        <span class="icone" style="--i: 18; --x: 20;"></span>
+        <span class="icone" style="--i: 35; --x: 40;"></span>
+        <span class="icone" style="--i: 50; --x: 60;"></span>
+        <span class="icone" style="--i: 3; --x: 80;"></span>
+    </div>
+
+    <div class="barra">
+    
+        <nav>
+            <div class="navegacao">
+                
+                <ul>
+                    <li>
+                        <a href="#home" class="navigation_link" >Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre_mim" class="navigation_link">Sobre mim</a>
+                    </li>
+
+                    <li>
+                        <a href="#habilidades" class="navigation_link">Habilidades</a>
+                    </li>
+
+                    <li>
+                        <a href="#projetos" class="navigation_link">Projetos</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato" class="navigation_link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="home">
+        <div class="texto">
+            <img src="/static/assets/titulo.svg" alt="" class="titulo" width="750px">
+
+            <p>
+                "A tecnologia é a ponte que une <ins style="color: #ff98d9;">criatividade e inovação</ins>, transformando desafios em possibilidades 
+                infinitas e moldando o futuro com cada <ins style="color: #ff98d9;">linha de código</ins>."
+            </p>
+
+            <!-- Estilo de botão diferente site: https://www.brasilcode.com.br/35-botoes-css-com-animacao/ -->
+            
+        </div>
+
+        <div class="foto" style="margin-top: -250px;" style="margin-left: -100%;">
+            <img src="/static/assets/fotinha.png" width="510px" style="border-radius: 1000px;" alt="">
+        </div>
+
+        <div class="social">
+            <div class="social-bar">
+                <div class="social-btn">
+                    <span class="icon">
+                        <a href="https://www.linkedin.com/in/beatriz-marques-ba1585335/" target="_blank">
+                            <img src="/static/assets/link.png" alt="">
+                        </a>
+                    </span>
+                    <span class="text">
+                        <a style="color: white; text-decoration: none; font-family: League Spartan", sans-serif; href="">LinkedIn</a>
+                    </span>
+                </div>
+
+                <!--  
+                <div class="social-btn">
+                    <span class="icon">
+                        <img src="/static/assets/email.png" width="30px" alt="">
+                    </span>
+                    <span class="text">
+                        <a style="color: white; text-decoration: none; font-family: League Spartan", sans-serif; href="">Email</a>
+                    </span>
+                </div>
+                -->
+
+                <div class="social-btn">
+                    <span class="icon">
+                        <a href="https://github.com/biaamarquess" target="_blank">
+                            <img src="/static/assets/git.png" width="30px" alt="">
+                        </a>
+                    </span>
+                    <span class="text">
+                        <a style="color: white; text-decoration: none; font-family: League Spartan", sans-serif; href="">GitHub</a>
+                    </span>
+                </div>
+
+                <div class="social-btn">
+                    <span class="icon">
+                        <a href="https://www.instagram.com/its.triz_/" target="_blank">
+                            <img src="/static/assets/insta.png" width="30px" alt="">
+                        </a>
+                    </span>
+                    <span class="text">
+                        <a style="color: white; text-decoration: none; font-family: League Spartan", sans-serif; href="">Instagram</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sobre mim -->
+     <div id="sobre_mim">
+        <img src="/static/assets/sobre.png" width="450px" alt="" class="titulo_sobre">
+
+        <div class="icons">
+            <img src="/static/assets/icones.png" class="pisca" alt="">
+        </div>
+
+        <div class="texos_sobre">
+            <p class="texto_um">
+                Olá, eu sou a bia! Sou uma pessoa que adora explorar dois mundos que,
+                à primeira vista, podem parecer bem diferentes, mas que pra mim se complementam
+                perfeitamente: a <ins style="color: #ff98d9;">tecnologia e a expressão criativa.</ins> 
+            </p>
+
+            <p class="texto_dois">
+            Sou curiosa por natureza e adoro aprender coisas novas, então estou sempre 
+            experimentando ferramentas, linguagens e projetos. Cada repositório é um pedacinho 
+            do meu crescimento, dos desafios que enfrentei e das soluções que descobri no caminho. 
+            </p>
+
+            <p class="texto_tres">
+                Acredito que a tecnologia é uma forma incrível de <ins style="color: #ff98d9;">criar e transformar
+                ideias em realidade</ins>, e é isso que me motiva a continuar explorando.
+            </p>                                    
+        </div>
+
+        
+
+        <img src="/static/assets/sombra.png" alt="" class="sombra">
+     </div>
+
+    
+     
+<!-- habilidades -->
+
+    <div id="habilidades">
+        <img src="/static/assets/habilidades.png" alt="" class="habilidades">
+
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        
+        <div class="container">
+            
+
+            <div class="skills-grid">
+                <!-- HTML -->
+                <div class="skill-card" data-skill="html">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h2>HTML</h2>
+                        <div class="skill-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="--percent: 90%"></div>
+                            </div>
+                            <span class="level-text">90%</span>
+                        </div>
+                        <div class="skill-description">
+                            <p>Estruturação semântica de páginas web</p>
+                        </div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill-card" data-skill="css">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h2>CSS</h2>
+                        <div class="skill-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="--percent: 85%"></div>
+                            </div>
+                            <span class="level-text">85%</span>
+                        </div>
+                        <div class="skill-description">
+                            <p>Estilização e animações avançadas</p>
+                        </div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card" data-skill="javascript">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h2>JavaScript</h2>
+                        <div class="skill-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="--percent: 80%"></div>
+                            </div>
+                            <span class="level-text">80%</span>
+                        </div>
+                        <div class="skill-description">
+                            <p>Desenvolvimento front-end interativo</p>
+                        </div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card" data-skill="python">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h2>Python</h2>
+                        <div class="skill-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="--percent: 75%"></div>
+                            </div>
+                            <span class="level-text">75%</span>
+                        </div>
+                        <div class="skill-description">
+                            <p>Automação e desenvolvimento back-end</p>
+                        </div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <!-- GitHub -->
+                <div class="skill-card" data-skill="github">
+                    <div class="skill-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h2>GitHub</h2>
+                        <div class="skill-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="--percent: 85%"></div>
+                            </div>
+                            <span class="level-text">85%</span>
+                        </div>
+                        <div class="skill-description">
+                            <p>Hospedagem e colaboração em projetos</p>
+                        </div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+
+                <!-- Canva -->
+                <div class="skill-card" data-skill="canva">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="skill-content">
+                        <h2>Canva</h2>
+                        <div class="skill-level">
+                            <div class="level-bar">
+                                <div class="level-fill" style="--percent: 90%"></div>
+                            </div>
+                            <span class="level-text">90%</span>
+                        </div>
+                        <div class="skill-description">
+                            <p>Criação de conteúdo visual e gráfico</p>
+                        </div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="habilidades_futurista.js"></script>
+
+    
+
+    <!-- PROJETOS -->
+
+    <div id="projetos">
+        <img src="/static/assets/projetos.png" alt="" class="titulo_projetos">
+
+        <div class="container_projetos">
+
+            <div class="projects-container">
+                <div class="projects-track">
+                    <!-- Projeto 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/static/assets/loguin.png" alt="Login">
+                        </div>
+                        <div class="project-divider"></div>
+                        <div class="project-info">
+                            <h2>Login</h2>
+                            <p class="p_logi">Sistema de login para cliente e fornecedor</p>
+                            <div class="project-icons">
+                                <img src="/static/assets/logi.png" alt="" class="logi">
+                            </div>
+                            <a href="#" class="github-link">
+                                <i class="fab fa-github"></i> Git Hub
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/static/assets/vibra_v.png" alt="Vibra Vision">
+                        </div>
+                        <div class="project-divider"></div>
+                        <div class="project-info">
+                            <h2>Vibra Vision</h2>
+                            <p>Uma nova identidade visual para uma "marca" já existente.</p>
+                            <div class="project-icons">
+                                <img src="/static/assets/vi.png" alt="" class="img_vibrav">
+                            </div>
+                            <a href="https://github.com/biaamarquess/Projeto-Inovar-Vibra_vision--2024?tab=readme-ov-file" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> Git Hub
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/static/assets/red.png" alt="Game Master">
+                        </div>
+                        <div class="project-divider"></div>
+                        <div class="project-info">
+                            <h2>Game Master</h2>
+                            <p>O sistema permite o cadastro de plataformas e jogos.</p>
+                            <div class="project-icons">
+                                <img src="/static/assets/controle.png" alt="" class="controle">
+                            </div>
+                            <a href="https://github.com/biaamarquess/Projeto-Game_Master-2024" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> Git Hub
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/static/assets/ameth.png" alt="Amethyst Investment">
+                        </div>
+                        <div class="project-divider"></div>
+                        <div class="project-info">
+                            <h2>Amethyst Investment</h2>
+                            <p>Projeto de disciplina "Matemática" do século (SEM e SEI) sobre investimentos.</p>
+                            <div class="project-icons">
+                                <img src="/static/assets/grafi.png" alt="" class="grafi">
+                            </div>
+                            <a href="https://github.com/biaamarquess/Projeto-investimentos-2024" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> Git Hub
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 5 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/static/assets/augusto.png" alt="Augusto Akio">
+                        </div>
+                        <div class="project-divider"></div>
+                        <div class="project-info">
+                            <h2>Augusto Akio</h2>
+                            <p>Primeira Landing page</p>
+                            <div class="project-icons">
+                                <img src="/static/assets/skate.png" alt="" class="skate">
+                            </div>
+                            <a href="https://github.com/biaamarquess/Primeiro-web_site--2024/tree/main" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> Git Hub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CONTATO -->
+    <div id="contato">
+        <div class="contato">
+            <img src="/static/assets/contato_t.png" alt="" class="contato_titulo">
+        </div>   
+        
+
+        <form action="https://formsubmit.co/beatrizmarquessouza123@gmail.com" method="POST">
+        <div class="campo">
+            <label for="Nome">
+                <span>Seu nome</span>
+            </label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="campo">
+            <label for="email">
+                <span>Email</span>
+            </label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="campo">
+            <label for="message">
+                <span>Mensagem</span>
+            </label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div class="botoes">
+            <button class="limpar" type="reset">Limpar</button>
+            <button class="enviar" type="submit">Enviar Mensagem</button>
+        </div>
+    </form>
+
+    <div class="tudinho">
+        <div class="contact-wrapper">
+                <div class="contact-form">
+                    <div class="success-message" id="success-message">
+                        <i class="fas fa-check-circle"></i> Sua mensagem foi enviada com sucesso!
+                    </div>
+            
+                
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Informações de Contato</h3>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p>beatrizmarquessouza123@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Localização</h4>
+                            <p>São Paulo, SP - Brasil</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/beatriz-marques-ba1585335/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/biaamarquess" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/its.triz_/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulação de envio de formulário
+            setTimeout(function() {
+                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('contact-form').reset();
+                
+                // Ocultar mensagem após 5 segundos
+                setTimeout(function() {
+                    document.getElementById('success-message').style.display = 'none';
+                }, 5000);
+            }, 1000);
+        });
+    </script>
+    
+    </div>
+
+    
+    
+    <div class="faixa-inferior"></div>
+</body>
+</html>
